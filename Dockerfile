@@ -15,6 +15,10 @@ RUN pip install -e .
 
 # Set environment variables to ensure Python outputs are visible in the logs
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8080
+
+# Expose the port the app runs on
+EXPOSE 8080
 
 # Run the Flask App
 CMD ["python", "app.py"]

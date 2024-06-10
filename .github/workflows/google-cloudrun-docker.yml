@@ -49,11 +49,11 @@ on:
     branches: [ "main" ]
 
 env:
-  PROJECT_ID: ambient-highway-421510 # TODO: update Google Cloud project id
-  GAR_NAME: github-action-sap
-  GAR_LOCATION: us-central1 # TODO: update Artifact Registry location
-  SERVICE: sap-flask-app # TODO: update Cloud Run service name
-  REGION: us-central1 # TODO: update Cloud Run service region
+  PROJECT_ID: tavishi # TODO: update Google Cloud project id
+  GAR_NAME: tavishi-github-action
+  GAR_LOCATION: europe-west2 # TODO: update Artifact Registry location
+  SERVICE: tavishi-sap-flask-app # TODO: update Cloud Run service name
+  REGION: europe-west2 # TODO: update Cloud Run service region
 
 jobs:
   deploy:

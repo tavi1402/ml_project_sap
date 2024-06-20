@@ -1,5 +1,5 @@
 # This workflow build and push a Docker container to Google Artifact Registry and deploy it on Cloud Run when a commit is pushed to the "main" branch
-
+#
 # Overview:
 #
 # 1. Authenticate to Google Cloud
@@ -88,12 +88,10 @@ jobs:
       - name: Docker Auth
         run: |-
          gcloud auth configure-docker "${{ env.GAR_LOCATION }}-docker.pkg.dev"
-
       - name: Build and Push Container
         run: |-
           docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_NAME }}/${{ env.SERVICE }}:${{ github.sha }}" ./
           docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_NAME }}/${{ env.SERVICE }}:${{ github.sha }}"
-
       # END - Docker auth and build
 
       - name: Deploy to Cloud Run
